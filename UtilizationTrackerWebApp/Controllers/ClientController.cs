@@ -21,6 +21,7 @@ namespace UtilizationTrackerWebApp.Controllers
             MyRepository = new Client_Repository();
         }
 
+
         // GET: Client
         [MyAuthorizationFilters(Role = "Admin,User,Manager")]
         public ActionResult Index()
