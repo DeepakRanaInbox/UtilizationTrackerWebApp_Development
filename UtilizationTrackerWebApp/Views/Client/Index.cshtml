@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UtilizationTrackerWebApp.Models.DTO.Client_DTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.Partial("_NotificationComponent")
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vClientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
